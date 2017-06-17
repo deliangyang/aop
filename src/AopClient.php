@@ -137,6 +137,14 @@ class AopClient
         return $encrypt->{$signType}($data);
     }
 
+    /**
+     * api http query
+     *
+     * @param $params
+     * @param BaseRequest $request
+     * @return mixed
+     * @throws HttpMethodAffectiveException
+     */
     protected function curl($params, BaseRequest $request)
     {
         $curl = new Curl();

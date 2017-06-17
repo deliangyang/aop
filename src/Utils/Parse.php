@@ -10,6 +10,12 @@ namespace Aop\Utils;
 class Parse
 {
 
+    /**
+     * xml to array()
+     *
+     * @param $xml_str
+     * @return mixed
+     */
     public static function xml2array($xml_str)
     {
         libxml_disable_entity_loader(true);
@@ -22,6 +28,12 @@ class Parse
         return $array;
     }
 
+    /**
+     * xml to array() to json
+     *
+     * @param $xml_str
+     * @return string
+     */
     public static function xml2json($xml_str)
     {
         libxml_disable_entity_loader(true);
@@ -48,6 +60,14 @@ class Parse
         return $xml;
     }
 
+    /**
+     * array 2 xml
+     *
+     * @param $arr
+     * @param int $dom
+     * @param int $item
+     * @return string
+     */
     public static function array2xml($arr, $dom = 0, $item = 0)
     {
         if (!$dom) {
@@ -70,6 +90,13 @@ class Parse
         return $dom->saveXML();
     }
 
+    /**
+     * json to array()
+     *
+     * @param $json
+     * @param int $assoc
+     * @return mixed
+     */
     public static function json2array($json, $assoc = JSON_UNESCAPED_UNICODE)
     {
         $array = json_decode($json, $assoc);

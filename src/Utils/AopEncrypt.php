@@ -12,7 +12,7 @@ class AopEncrypt
     public function md5($params)
     {
         // xxx
-        return $this->md5($params);
+        return md5($params);
     }
 
     public function sha1($params)
